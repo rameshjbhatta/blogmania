@@ -1,0 +1,24 @@
+/* styles.css */
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.nav-item {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.nav-item li {
+    flex: 1; /* Each item takes an equal portion of space */
+    text-align: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}

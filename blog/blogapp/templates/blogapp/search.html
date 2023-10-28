@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'blogapp/header.html' %}
+    <hr>
+
+    <hr>
+    {% comment %} card first  {% endcomment %}
+    <div class="card mb-3">
+        {% if results %}
+        
+      {% for d in results %}
+      <img src="{{ d.img.url }}" class="card-img-top" alt="attack">
+      <div class="card-body">
+        <h5 class="card-title">{{d.title}}</h5>
+        <p class="card-text">{{d.content }}</p>
+        
+        <span class="text-muted" style="display: block;">Author:{{ d.author }}</span>
+        <p class="card-text"><small class="text-muted">{{d.date_time}}</small>
+      </div>
+      {% endfor %}
+      {% else %}
+        <p>No results found.</p>
+        <br><br><br><br><br><br><br><br><br><br>
+    {% endif %}
+    </div>
+   <hr>
+   {% include 'blogapp/footer.html' %}
+       {% comment %} <div class="card mb-3">
+      {% for d in tech %}
+      <img src="{{ d.img.url }}" class="card-img-top" alt="attack">
+      <div class="card-body">
+        <h5 class="card-title">{{d.title}}</h5>
+        <p class="card-text">{{d.content | safe | truncatechars_html:300 }}</p>
+        <a  class="btn btn-primary">Read More</a>
+        <span class="text-muted" style="display: block;">Author:{{ d.author }}</span>
+        <p class="card-text"><small class="text-muted">{{d.date_time}}</small>
+      </div>
+      {% endfor %}
+    </div> {% endcomment %}
