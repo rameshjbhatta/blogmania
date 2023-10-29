@@ -1,0 +1,33 @@
+{% include 'blogapp/header.html'%}
+
+{% if type is nontech %}
+<hr>
+<h2 class="text-xl-center">Non-Technology Blogs</h2>
+<hr>
+{% endif %}
+{% if type != nontech %}
+<hr>
+<h2 class="text-xl-center">Technology Blogs</h2>
+<hr>
+{% endif %}
+
+
+<div class="card-deck" >
+    {% for d in posts %}
+    <div class="card">
+        {% if d.img %}
+      <img src="{{d.img.url}}" class="card-img-top" alt="...">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{d.title}}</h5>
+        <p class="card-text">{{d.content | safe | truncatechars_html:300 }}</p>
+        <a href="{% url 'blog_detail' d.id %}" class="btn btn-primary">Read More</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{d.date_time}}</small>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include 'blogapp/footer.html' %}

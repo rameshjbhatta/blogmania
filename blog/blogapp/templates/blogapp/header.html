@@ -55,13 +55,13 @@
                             Blogs
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#technology">Tech Blogs</a></li>
+                            <li><a class="dropdown-item" href="{% url 'techpage'%}">Tech Blogs</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#nontechnology">Non-tech Blogs</a></li>
+                            <li><a class="dropdown-item" href="{% url 'nontechpage' %}">Non-tech Blogs</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'homepage' %}">Popular Blogs</a>
+                        <a class="nav-link" href="{% url 'homepage' %}">Latest Blogs</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'contactuspage' %}">Create Blogs</a>

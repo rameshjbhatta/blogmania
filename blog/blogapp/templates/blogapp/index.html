@@ -46,7 +46,7 @@
    
 
    
-    <h2>Non-Technology Blogs</h2>
+    <h2> <a href="{% url 'nontechpage' %}"> Non-Technology Blogs </a></h2>
     <hr>
     {% comment %} card secoond  {% endcomment %}
 
@@ -70,18 +70,22 @@
     </div>
 
 
-    <hr>
-    <h1>Technology Blogs</h1>
-    <hr>
+    
     {% comment %} final cards  {% endcomment %}
 
 
     <div class="row" id="technology">
+      <hr>
+    <h1> <a href="{% url 'techpage'%}">Technology Blogs </a></h1>
+    <hr>
       {% for td in techd %}
       <div class="col-sm-6"> 
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">{{td.title}}</h5>
+            {% if td.img %}
+            <img src="{{td.img.url}}" class="card-img-top" alt="...">
+            {% endif %}
             <p class="card-text">{{td.content|safe|truncatechars_html:100}}</p>
             <a href="{% url 'blog_detail' td.id %}" class="btn btn-primary">Read More</a>
           </div>

@@ -51,3 +51,16 @@ def contact(request):
 def blog_detail(request, blog_id):
     blog = get_object_or_404(BlogInfo, pk=blog_id)
     return render(request, 'blogapp/blog_detail.html', {'blog': blog})
+
+def techpage(request):
+    """print('hello')"""
+    data=BlogInfo.objects.all()
+    posts=data.filter(type='tech')
+    type="tech"
+    return render(request,'blogapp/specificpage.html',{'posts':posts,'type':type})
+
+def nontechpage(request):
+    """print('hello')"""
+    posts=BlogInfo.objects.filter(type='nontech')
+    return render(request,'blogapp/specificpage.html',{'posts':posts})
+
