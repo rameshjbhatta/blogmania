@@ -59,7 +59,8 @@
         <div class="card-body">
           <h5 class="card-title">{{d.title}}</h5>
           <p class="card-text">{{d.content | safe | truncatechars_html:300 }}</p>
-          <a href="#" class="btn btn-primary">Read More</a>
+          <a href="{% url 'blog_detail' d.id %}" class="btn btn-primary">Read More</a>
+         
         </div>
         <div class="card-footer">
           <small class="text-muted">{{d.date_time}}</small>
@@ -82,7 +83,7 @@
           <div class="card-body">
             <h5 class="card-title">{{td.title}}</h5>
             <p class="card-text">{{td.content|safe|truncatechars_html:100}}</p>
-            <a href="#" class="btn btn-primary">Read More</a>
+            <a href="{% url 'blog_detail' td.id %}" class="btn btn-primary">Read More</a>
           </div>
         </div>
       </div>

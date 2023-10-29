@@ -1,0 +1,16 @@
+{% include 'blogapp/header.html'%}
+   
+
+    <div class="card mb-3">
+       {% if blog.img %}
+        <img src="{{ blog.img.url }}" class="card-img-top" alt="{{ blog.title }}">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ blog.title }}</h5>
+          <p class="card-text">{{ blog.content | safe }}.</p>
+          <p class="card-text"><small class="text-muted">{{blog.date_time}}</small></p>
+          <p class="card-text"><small class="text-muted">{{blog.author}}</small></p>
+        </div>
+      </div>
+   
+{% include 'blogapp/footer.html'%}

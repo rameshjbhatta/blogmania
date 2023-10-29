@@ -1,7 +1,7 @@
 """
 functions of the blogapp
 """
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from rest_framework import viewsets, permissions
 from blogapp.models import *
 from blogapp.serializer import *
@@ -47,3 +47,7 @@ def contact(request):
         message=request.POST['message']
         ContactInfo.objects.create(name=name,email=email,message=message)
     return render(request, 'blogapp/contactus.html')
+
+def blog_detail(request, blog_id):
+    blog = get_object_or_404(BlogInfo, pk=blog_id)
+    return render(request, 'blogapp/blog_detail.html', {'blog': blog})
