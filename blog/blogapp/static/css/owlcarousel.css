@@ -1,0 +1,26 @@
+.owl-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.blog-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.blog-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.blog-item h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.blog-item p {
+    font-size: 1rem;
+}

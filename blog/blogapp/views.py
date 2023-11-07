@@ -33,7 +33,7 @@ def search(request):
     print(results)
     if query:
         data=BlogInfo.objects.all()
-        results = data.filter(Q(title__icontains=query)| Q(content__icontains=query)| Q(author__icontains=query)|Q (type__icontains=query)| Q(related_to__icontains=query))
+        results = data.filter(Q(title__icontains=query)| Q(author__icontains=query)|Q (type__iexact=query)| Q(related_to__iexact=query))
     return render(request,'blogapp/search.html',{'results':results})
 
 
