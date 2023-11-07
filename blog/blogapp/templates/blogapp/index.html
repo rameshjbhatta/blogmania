@@ -1,15 +1,18 @@
 {% load static %}
 {% include 'blogapp/header.html' %}
     <hr>
-
+    <h2><a href="#latestblogs"> Latest Blogs </a></h2>
+    <hr>
      <div class="owl-carousel">
-      {% for d in data %}
+      {% for d in data|slice:":4" %}
+      {% comment %} {% if forloop.counter <= 4 %} {% endcomment %}
         <div class="blog-item">
           <img src="{{d.img.url}}" class="card-img-top" alt="...">
             <h6>{{d.title}}</h6>
             <p>{{ d.content|safe|truncatechars_html:50}}</p>
             <a href="{% url 'blog_detail' d.id %}" class="btn btn-primary">Read More</a>
         </div>
+        {% comment %} {% endif %} {% endcomment %}
         {% endfor %}
         </div>
   

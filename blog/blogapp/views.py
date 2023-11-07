@@ -21,7 +21,7 @@ class ContactInfoViewSet(viewsets.ModelViewSet):
 
 def index(request):
     """print('hello')"""
-    data=BlogInfo.objects.all()
+    data=BlogInfo.objects.all().order_by('date_time')
     nontech=BlogInfo.objects.filter(type='nontech')
     techd=data.filter(type='tech')
     return render(request,'blogapp/index.html',{'data':data,'nontech':nontech,'techd':techd})
